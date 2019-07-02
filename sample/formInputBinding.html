@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Form input binding sample</title>
+	<script src="https://unpkg.com/vue@2.5.17"></script>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="item in items" v-bind:key="item.name">
+				{{ item.name }}の個数: <input type="number" v-model="item.quantity" min="0">
+			</li>
+		</ul>
+		<hr>
+		<div v-bind:style="errorMessageStyle">
+			<ul>
+				<li v-for="item in items" v-bind:key="item.name">
+					{{ item.name }}: {{ item.price }} × {{ item.quantity }} = {{ item.price * item.quantity | numberWithDelimiter }}円
+				</ul>
+			</div>
+		</li>
+		<!-- <p>{{ items[0].name }}: {{ items[0].price }} × {{ items[0].quantity }}</p> -->
+		<p>小計: {{ totalPrice | numberWithDelimiter }}円</p> 
+		<p>合計（税込み）: {{ totalPriceWithTax | numberWithDelimiter }}円</p>
+		<p v-show="!canBuy">{{ 1000 | numberWithDelimiter }}円以上からご購入いただけます</p>
+		<button v-bind:disabled="!canBuy" v-on:click.prevent="doBuy">購入</button>
+	</div>
+	<script src="./js/formInputBinding.js"></script>
+</body>
+</html>
