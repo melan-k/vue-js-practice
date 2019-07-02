@@ -8,17 +8,11 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-  <div id="app-6">
+  <div id="app">
     <p>{{ message }}</p>
     <input v-model="message">
+    <button v-on:click="TestMethod">Test</button>
   </div>
-  <script>
-    var app6 = new Vue({
-      el: '#app-6',
-      data: {
-        message: 'Hello Vue!'
-      }
-    })
-  </script>
+  <script src="sample.js"></script>
 </body>
 </html>
