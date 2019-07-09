@@ -1,4 +1,4 @@
-const userdetail = Vue.extend({
+const UserDetail = {
   template: `
     <div>
       <div class="loading" v-if="loading">読み込み中...</div>
@@ -8,11 +8,7 @@ const userdetail = Vue.extend({
         <p>{{ user.description }}</p>
       </div>
     </div>
-  `
-})
-
-const UserDetail = {
-  template: userdetail,
+  `,
   data: function() {
     return {
       loading: false,

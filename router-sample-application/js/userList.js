@@ -1,4 +1,4 @@
-const userlist = Vue.extend({
+const UserList = {
   template: `
     <div>
       <div class="loading" v-if="loading">読み込み中...</div>
@@ -7,11 +7,7 @@ const userlist = Vue.extend({
         <router-link :to="{ path: '/users/' + user.id }">{{ user.name }}</router-link>
       </div>
     </div>
-  `
-})
-
-const UserList = {
-  template: userlist,
+  `,
   data: function() {
     return {
       loading: false,
