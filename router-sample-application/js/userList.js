@@ -1,5 +1,17 @@
+const userlist = Vue.extend({
+  template: `
+    <div>
+      <div class="loading" v-if="loading">読み込み中...</div>
+      <div v-if="error" class="error">{{ error }}</div>
+      <div v-for="user in users" :key="user.id">
+        <router-link :to="{ path: '/users/' + user.id }">{{ user.name }}</router-link>
+      </div>
+    </div>
+  `
+})
+
 const UserList = {
-  template: '#user-list',
+  template: userlist,
   data: function() {
     return {
       loading: false,

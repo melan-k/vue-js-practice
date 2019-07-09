@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<title>Router sample application</title>
-<style>
-[v-cloak] {
-  display: none
-}
-</style>
-<div id="app">
-  <nav v-cloak>
-    <router-link to="/top">トップページ</router-link>
-    <router-link to="/users">ユーザ一覧ページ</router-link>
-    <router-link to="/users/new?redirect=true">新規ユーザ登録</router-link>
-    <router-link to="/login" v-show="!Auth.loggedIn()">ログイン</router-link>
-    <router-link to="/logout" v-show="Auth.loggedIn()">ログアウト</router-link>
-  </nav>
-  <router-view></router-view>
-</div>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Router Sample Application</title>
+  <style>
+    /* https://js.vuejs.org/vs/api/index.html#v-cloak */
+    [v-cloak] {
+      display: none /* テンプレートの{{}}を非表示にする */
+    }
+  </style>
+  <script src="https://unpkg.com/vue@2.5.17"></script>
+  <script src="https://unpkg.com/vue-router@3.1.0"></script>
+</head>
+<body>
+  <div id="app">
+    <nav v-cloak>
+      <router-link to="/top">トップページ</router-link>
+      <router-link to="/users">ユーザ一覧ページ</router-link>
+      <router-link to="/users/new?redirect=true">新規ユーザ登録</router-link>
+      <router-link to="/login" v-show="!Auth.loggedIn()">ログイン</router-link>
+      <router-link to="/logout" v-show="Auth.loggedIn()">ログアウト</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
+</body>
+</html>
