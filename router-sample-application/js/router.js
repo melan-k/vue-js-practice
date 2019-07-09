@@ -1,6 +1,7 @@
 import UserList from 'userList'
 import UserDetail from 'userDetail'
 import Auth from 'auth'
+import Login from 'login'
 // ルートオプションを渡してルーターインスタンスを作成
 const router = new VueRouter({
   // 各ルートにコンポーネントをマッピング

@@ -1,5 +1,23 @@
 const UserCreate = {
-  template: '#user-create',
+  template: `
+    <div>
+      <div class="sending" v-if="sending">Sending...</div>
+      <div>
+        <label>名前:</label>
+        <input type="text" v-model="user.name">
+      </div>
+      <div>
+        <label>説明文:</label>
+        <textarea v-model="user.description"></textarea>
+      </div>
+      <div v-if="error" class="error">
+        {{ error }}
+      </div>
+      <div>
+        <input type="button" @click="createUser" value="送信">
+      </div>
+    </div>
+  `,
   data: function() {
     return {
       sending: false,

@@ -2,7 +2,17 @@ import Auth from 'auth'
 
 // ログインコンポーネント
 const Login = {
-  template: '#login',
+  template: `
+    <div>
+      <p v-if="$route.query.redirect">ログインしてください</p>
+      <form @submit.prevent="login">
+        <label><input placeholder="email" v-model="email"></label>
+        <label><input type="password" v-model="pass" placeholder="password"></label><br>
+        <button type="submit">ログイン</button>
+        <p v-if="error" class="error">ログインに失敗しました</p>
+      </form>
+    </div>
+  `,
   data: function() {
     return {
       email: 'vue@example.com',
@@ -23,3 +33,5 @@ const Login = {
     }
   }
 }
+
+export default Login
