@@ -60,3 +60,5 @@ const UserCreate = {
     }
   }
 }
+
+export default UserCreate
