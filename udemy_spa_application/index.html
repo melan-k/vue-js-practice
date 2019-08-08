@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://unpkg.com/vue@2.5.21"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p :title="message">
+      マウスポインタを当ててください
+    </p>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          message: 'Hello world!'
+        }
+      }
+    })
+
+    window.vm = vm
+  </script>
+</body>
+</html>
